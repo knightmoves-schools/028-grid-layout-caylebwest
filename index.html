@@ -5,8 +5,9 @@
         .grid-container {
             display: grid;
             grid-template-areas:
-                "header header"   /* Header spans full width (both columns) */
-                "leftNav main";   /* Left nav (1 part) + Main (2 parts) */
+                "header header header header"   /* Header spans full width (both columns) */
+                "leftNav main main"
+                "leftNav main main";   /* Left nav (1 part) + Main (2 parts) */
             grid-template-columns: 1fr 2fr;   /* Main is twice as wide as leftNav */
             grid-template-rows: auto 1fr;     /* Header auto height, main takes remaining space */
             gap: 10px;
