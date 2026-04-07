@@ -1,24 +1,49 @@
 <html>
 <head>
-    <title>Grid</title>
+    <title>Grid Layout</title>
     <style>
         .grid-container {
             display: grid;
             grid-template-areas:
-                'header header'
-                'leftNav main'
-                'leftNav main';
-            grid-template-columns: 1fr 2fr;
+                "header header"   /* Header spans full width (both columns) */
+                "leftNav main";   /* Left nav (1 part) + Main (2 parts) */
+            grid-template-columns: 1fr 2fr;   /* Main is twice as wide as leftNav */
+            grid-template-rows: auto 1fr;     /* Header auto height, main takes remaining space */
             gap: 10px;
+            height: 100vh;                    /* Fill the screen height for better visibility */
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .first-item {
+            grid-area: header;
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .second-item {
+            grid-area: leftNav;
+            background-color: lightgreen;
+            padding: 20px;
+        }
+
+        .third-item {
+            grid-area: main;
+            background-color: lightcoral;
+            padding: 20px;
         }
     </style>
 </head>
-
 <body>
+
     <div class="grid-container">
-        <div class="first-item">first</div>
-        <div class="second-item">second</div>
-        <div class="third-item">third</div>
+        <div class="first-item">Header (first) - Full width across the top</div>
+        <div class="second-item">Left Navigation (second) - Narrow column</div>
+        <div class="third-item">Main Content (third) - Twice as wide as the left nav</div>
     </div>
+
 </body>
 </html>
