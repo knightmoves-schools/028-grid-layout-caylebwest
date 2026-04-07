@@ -1,21 +1,33 @@
 <html>
-
 <head>
     <title>Grid</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        .item1 { grid-area: header; }
-
-        .item2 { grid-area: leftNav; }
-
-        .item3 { grid-area: main; }
         .grid-container {
             display: grid;
             grid-template-areas:
                 'header header'
-                'leftNav main main'
-                'leftNav main main'
+                'leftNav main'
+                'leftNav main';
+            grid-template-columns: 1fr 2fr;
             gap: 10px;
+        }
+
+        .first-item {
+            grid-area: header;
+        }
+
+        .second-item {
+            grid-area: leftNav;
+        }
+
+        .third-item {
+            grid-area: main;
+        }
+
+        /* Optional styling so you can see it clearly */
+        .first-item { background: lightblue; }
+        .second-item { background: lightgreen; }
+        .third-item { background: lightcoral; }
     </style>
 </head>
 
@@ -26,5 +38,4 @@
         <div class="third-item">third</div>
     </div>
 </body>
-
 </html>
